@@ -1,0 +1,63 @@
+.footer {
+	background-color: $blueD;
+
+	.wrapper {
+		@extend %clearfix;
+	}
+
+	.footer__logo {
+		float: left;
+		height: 155px;
+		width: 240px;
+		padding-top: 50px;
+		text-align: left;
+
+		p {
+			color: #fff;
+			font-size: 12px;
+		}
+	}
+
+	.footer__info {
+		float: right;
+		padding-top: 30px;
+		padding-bottom: 20px;
+		border-bottom: 1px solid rgba(255, 255, 255, .1);
+		width: calc(100% - 240px);
+		text-align: left;
+
+		> * {
+			display: inline-block;
+			vertical-align: middle;
+		}
+
+		.footer__info__contacts a {
+			display: block;
+		}
+	}
+
+	.footer__nav {
+		width: calc(100% - 240px);
+		float: right;
+		padding-top: 15px;
+
+		ul {
+			@include flex();
+			margin: 0;
+
+			li {
+				list-style: none;
+
+				a {
+					color: #fff;
+					text-decoration: none;
+					font-family: $rb;
+
+					&:hover {
+						text-decoration: underline;
+					}
+				}
+			}
+		}
+	}
+}
