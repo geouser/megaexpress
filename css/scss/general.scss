@@ -6,6 +6,7 @@
 @import 'slick';
 @import 'slick-theme';
 @import 'settings-magnific';
+@import 'buttons';
 
 
 
@@ -59,7 +60,6 @@ a {
       text-decoration: underline;
   }
 }
-
 
 /*---------------------- 
     HEADER STYLES
@@ -202,28 +202,28 @@ nav ul {
 
 
 /* ------- menu toggle --------- */
-.menu-button                  {    
-                                    display: none;
-                                    width: 50px;
-                                    height: 50px;
-                                    @include position(fixed, 15px, 15px, auto, auto);
-                                    margin: auto; 
-                                    cursor: pointer;
-                                    z-index: 100;
-                                    background-color: salmon;
-                                    border: none;
-                                    -webkit-border-radius: 4px;
-                                            border-radius: 4px;
-      .menu-line                    {
-                                          display: block;
-                                          @include position(absolute, auto, 0, auto, 0);
-                                          width: 60%;
-                                          height: 5px;
-                                          background-color: #fff;
-                                          -webkit-border-radius: 1px;
-                                          border-radius: 1px;
-                                          @include transition(all, .4s);
-      }
+.menu-button {    
+            display: none;
+            width: 50px;
+            height: 50px;
+            @include position(fixed, 15px, 15px, auto, auto);
+            margin: auto; 
+            cursor: pointer;
+            z-index: 100;
+            background-color: salmon;
+            border: none;
+            -webkit-border-radius: 4px;
+                    border-radius: 4px;
+        .menu-line {
+              display: block;
+              @include position(absolute, auto, 0, auto, 0);
+              width: 60%;
+              height: 5px;
+              background-color: #fff;
+              -webkit-border-radius: 1px;
+              border-radius: 1px;
+              @include transition(all, .4s);
+        }
 
       .top_line                     {   top: 12px;  margin: auto;}
       .middle_line                  {   top: 22px;  margin: auto;}
@@ -334,9 +334,9 @@ form {
     }
     button {
         margin-top: 15px;
+        font: 18px $rm;
     }
 }
-
 
 @import 'main';
 @import 'footer';
