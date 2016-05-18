@@ -39,6 +39,12 @@ $('.menu-button').on('click', function(event) {
 });
 
 
+$('.offer__slider').slick({
+  dots: true,
+  arrows: false,
+  fade: true
+});
+
 });
 
 
