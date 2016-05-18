@@ -50,7 +50,57 @@
 
 }
 
+.main-features {
+    padding: 50px 0;
+    background-color: $orange;
 
+    @media (max-width: 500px) {
+        padding-top: 130px;
+        padding-bottom: 10px;
+    }
+
+    .container {
+        @include flex($justify: center, $wrap: wrap);
+
+        @media (max-width: 500px) {
+            @include flex($justify: flex-start, $wrap: wrap);
+        }
+
+        .box {
+            width: 130px;
+            margin: 0 15px;
+
+            @media (max-width: $tablets) {
+                width: 110px;
+            }
+
+            @media (max-width: $phones) {
+                width: 33%;
+                padding: 0 10px;
+                margin: 0 0 30px;
+            }
+
+            @media (max-width: 500px) {
+                width: 50%;
+                padding: 0 10px;
+                margin: 0 0 30px;
+            }
+
+            &__icon {
+                height: 45px;
+                margin-bottom: 10px;
+            }
+
+            &__text {
+                font-size: 16px;
+                line-height: 24px;
+                color: #fff;
+                font-family: $rm;
+                height: 72px;
+            }
+        }
+    }
+}
 
 
 /*Icons*/
