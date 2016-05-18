@@ -1,5 +1,6 @@
 @import 'mixins';
 @import 'reset';
+@import 'fonts';
 @import 'settings';
 
 
@@ -26,7 +27,33 @@ CSS tooltip-----------  @include tooltiptooltip($content: attr(data-tooltip), $d
 
 
 */
-
+h1 {
+  font: 36px/48px $rb;
+  color: $blue;
+  .subtitle {
+    font: 16px/30px $rm;
+  }
+}
+h2 {
+  font: 30px/50px $rb;
+  color: #000;
+  display: block;
+  text-transform: uppercase;
+}
+.main-page h2 {
+  width: 100%;
+  text-align: center;
+  padding: 0 20%;
+}
+p {font: 13px/24px $v;}
+a {
+  color: $blue; 
+  text-decoration: underline;
+  @include transition(all, .2s);
+  &:hover {
+      text-decoration: underline;
+  }
+}
 
 /*---------------------- 
     BUTTON STYLES
