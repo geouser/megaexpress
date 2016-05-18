@@ -2,6 +2,7 @@
 @import 'reset';
 @import 'fonts';
 @import 'settings';
+@import 'buttons';
 
 
 
@@ -55,23 +56,6 @@ a {
   }
 }
 
-/*---------------------- 
-    BUTTON STYLES
-------------------------*/
-.button {
-    height: 42px; 
-    padding: 0 17px; 
-    border: 1px solid #fff; 
-    background-color: transparent; 
-    color: #FFF; 
-    -webkit-border-radius: 10px;
-    border-radius: 6px; 
-    font: 18px 'helvetica';
-    cursor: pointer;
-    @include transition(all, .2s);
-    
-    &:hover {background-color: rgba(255,255,255, .2);}
-}
 
 
 /*---------------------- 
