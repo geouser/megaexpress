@@ -2,6 +2,9 @@
 @import 'reset';
 @import 'fonts';
 @import 'settings';
+@import 'slick';
+@import 'slick-theme';
+@import 'settings-magnific';
 
 
 
@@ -30,10 +33,11 @@ CSS tooltip-----------  @include tooltiptooltip($content: attr(data-tooltip), $d
 h1 {
   font: 36px/48px $rb;
   color: $blue;
-  .subtitle {
+  text-align: left;
+}
+.subtitle {
     font: 16px/30px $rm;
   }
-}
 h2 {
   font: 30px/50px $rb;
   color: #000;
@@ -78,85 +82,137 @@ a {
     HEADER STYLES
 ------------------------*/
 header {
-            margin: 0;
-            left:0;
-            @include position(absolute, 0, auto, auto, 0);
-            width: 100%;
-            height: 100px;
-            z-index: 100;
-            background: chocolate;
-            @include transition(all, .4s);
-            
-	.wrapper {
-            @include flex();
-            height: 100%;
-	}
+    margin: 0;
+    left:0;
+    @include position(absolute, 0, auto, auto, 0);
+    width: 100%;
+    z-index: 100;
+    background: #fff;
+    @include transition(all, .4s);
 
     @include m800 {
-             @include position(fixed, 0, auto, auto, -100%);
-             width: 260px !important;
-             height: 100%;
-             text-align: center;
-             background-color: #191919;
-             margin-top: 0;
-             padding: 20px 0;
-             z-index: 100;
-             
-             &.active {left: 0;}
-             
-             .wrapper {
-                   @include flexDirection(column);
-                   width: 100%;
-            }
+         @include position(fixed, 0, auto, auto, -100%);
+         width: 260px !important;
+         height: 100%;
+         text-align: center;
+         background-color: #fff;
+         margin-top: 0;
+         padding: 20px 0;
+         z-index: 100;
+         
+         &.active {left: 0;}
+         
+         .wrapper {
+               @include flexDirection(column);
+               width: 100%;
+        }
+    }
+     &:after {
+        content: '';
+        display: block;
+        width: 970px;
+        position: absolute;
+        bottom: -64px;
+        left: 0;
+        z-index: 2;
+        height: 60px;
+        background-image: url("../images/shadow.png");
+        background-repeat: no-repeat;
+        right: 0;
+        margin: auto;
+    }
+
+
+    .header__top {
+        padding: 7px 0;
+        background-color: $blueD;
+        color: #FFF;
+        .wrapper {
+            @include flex();
+        }
+        .divide {
+            height: 35px;
+            width: 1px;
+            vertical-align: middle;
+            background-color: #1E5D75;
+        }
+    }
+     .header__bottom {
+        padding: 30px 0;
+        background-color: #fff;
+        .wrapper {
+            @include flex();
+        }
     }
 }
 
-.logo {
-            position: relative;
-            width: 200px;
-            height: 0;
+.tel,
+.mail,
+.timeOfWork {
+    font: 16px/25px $rb;
+    color: #FFF;
+}
 
-	& a {
-	            display: block;
-	            height: 100%;
-	            width: 100%;
-	      & img {
-            		width: 100%;
-		}
-	}
+.logo {
+    position: relative;
+    display: block;
+	& img {
+     height: 100%;
+     display: inline-block;
+     vertical-align: middle;   
+    }
+    & p {
+        display: inline-block;
+        vertical-align: middle;
+        padding-left: 18px;
+        font: 38px/19px $rb;
+        text-transform: uppercase;
+        text-align: left;
+        color: $orange;
+        padding-top: 6px;
+        span{
+         color: $blue;
+         display: inline-block;
+        }
+        strong {
+            font: 11px/19px $rm;
+            color: #000;
+            text-transform: none;
+            display: block;
+            margin-top: 5px;
+            padding-left: 2px;
+        }
+    }
 }
 
 
 /*-------- nav ---------*/
 nav ul {
-            @include flex();
-            list-style-type: none;
+        @include flex();
+        list-style-type: none;
         &  a {
-                font-size: 16px;
-                font-family: 'helvetica';
-                color: #FFF;
-                display: inline-block;
-                padding: 3px 15px 2px;
-                background-color: rgba(255,255,255, .0);
-                text-decoration: none;
-                @include transition(all, .2s);
-                -webkit-border-radius: 3px;
-                        border-radius: 3px;
-            &:hover {background-color: rgba(255,255,255, .2);}
+            font: 16px/50px $rb;
+            color: $blue;
+            display: inline-block;
+            margin: 0 20px;
+            text-decoration: none;
+            @include transition(all, .2s);
+                
+            &:hover {}
         }
 
 
       @include m800 { 
-                  display: block;
-                  height: 100%;
-                  overflow: scroll;
-                  position: relative;
-                  
-                  li a                    {   
-                        margin: 0 0 25px 0;
-                        &.active {color: #ECCC1D;}
-                        &:hover  {background: transparent;}
-                  } 
+          display: block;
+          height: 100%;
+          overflow: scroll;
+          position: relative;
+          
+          li a                    {   
+                margin: 0 0 25px 0;
+                &.active {color: #ECCC1D;}
+                &:hover  {background: transparent;}
+          } 
       }
 }
 
@@ -202,40 +258,36 @@ nav ul {
 }
 
 
-
-
-/*---------------------- 
-    OFFER STYLES
-------------------------*/
-.offer {
-      height: 100%;
-      min-height: 650px;
-      max-height: 900px;
-      background: url('../images/law.jpg') no-repeat center center;
-      background-size: cover;
-      padding: 100px 0 0 0;
-      position: relative;
-        
+.slick-dots {
+    margin: 0;
+    bottom: 30px;
+    width: 970px;
+    text-align: left;
+    left: 0;
+    right: 0;
+    margin: auto;
+    @include m1000 {
+        width: 100%;
+    }
+    li {
+        width: 12px;
+        height: 12px;
+        display: inline-block;
+        vertical-align: middle;
+        margin: 0 5px;
+        background-color: $orange;
+        opacity: .4;
+        -webkit-border-radius: 50%;
+                border-radius: 50%;
+        &.slick-active {
+            opacity: 1;
+        }
+        button,
         &:before {
-            content: "";
-            width: 100%;
-            height: 100%;
-            @include position(absolute, 0, auto, auto, 0);
-            display: block;
-            background-color: rgba(32, 40, 51, .75);
-            z-index: 0;
+            display: none;
         }
-
-        .offerInfo {
-            height: 100%;
-            @include flex($alignI: center, $justify: space-around, $direction: column);
-            z-index: 2;
-            position: relative;
-            text-align: center;
-        }
-
+    }
 }
-
 
 /*---------------------- 
     INFOBLOCKS STYLES
@@ -256,11 +308,47 @@ nav ul {
             }
         }
 
-      &.--two  .infoBlock   {    width: 50%;}
-      &.--four .infoBlock   {    width: 25%;}
-      &.--three .infoBlock  {    width: 33%;}
+    &.--two  .infoBlock   {    width: 50%;}
+    &.--four .infoBlock   {    width: 25%;}
+    &.--three .infoBlock  {    width: 33%;}
 }
 
 
 
 
+
+form {
+    width: 295px;
+    padding: 6px;
+    background-color: $orange;
+    background-image: url("../images/form_bg.jpg");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    text-align: center;
+    .wrap {
+        padding: 20px 16px;
+        background-color: $blue;
+    }
+    h2 {
+        font: 24px/50px $rb;
+        color: #FFF;
+    }
+    p {
+        font: 12px/18px $rl;
+        color: #FFF;
+        margin-top: -10px;
+    }
+    input {
+        margin: 15px 0 0;
+        width: 100%;
+        height: 33px;
+        padding-left: 15px;
+        font: 12px $v;
+    }
+    button {
+        margin-top: 15px;
+    }
+}
+
+
+@import 'main';

@@ -1,0 +1,51 @@
+/*---------------------- 
+    OFFER STYLES
+------------------------*/
+.offer {
+    height: 715px;
+    padding: 200px 0 0 0;
+    position: relative;
+    &__slider {
+        height: 100%;
+    }
+    .slick-list,
+    .slick-track {height: 100%;}
+    &__slide {
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        height: 100%;
+        .wrapper { 
+            height: 100%;
+            text-align: left !important;
+            &:before {
+                height: 100%;
+                content: "";
+                display: inline-block;
+                vertical-align: middle;
+            }
+        }
+        &__info {
+            width: 500px;
+            display: inline-block;
+            vertical-align: middle;
+            text-align: left;
+            h2 {
+                font: 36px/48px $rb;
+              color: $blue;
+              text-align: left;
+            }
+            p {
+                text-align: left;
+            }
+        }
+    }
+
+    form {
+        position: absolute;
+        right: calc((100% - 970px) / 2);
+        top: calc(50% - 25px);
+        margin: auto;
+        height: 265px;
+    }
+
+}
