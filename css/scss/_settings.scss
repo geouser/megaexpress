@@ -1,8 +1,10 @@
 // COLORS
 // ---------------------------
-$colorGrey: #3A3A3A;
-$colorBlue: #30A7E4;
-$colorBlueD: #062A41;
+$blue: #025388;
+$blueD: #054B65;
+$orange: #FF8200;
+$orangeD: #E87700;
+$orangeHover: #FF9A31;
 
 
 // FONTS
@@ -13,20 +15,21 @@ $rl		: 'robotolight';
 $rb		: 'robotobold';
 
 
-html, body                    	{   height: 100%;}
-p                             	{   color: $colorGrey;}
-h1, h2, h3, h4, h5, p         	{   color: $colorGrey;}
+
+html, body                    	{   }
+p                             	{   color: #000;}
+h1, h2, h3, h4, h5, p         	{   color: #000;}
 .white                          {	color: #FFF;}
 
 
 // lAYOUT
 // ---------------------------
 
-.wrapper                      	{   width: 1200px;
+.wrapper                      	{   width: 970px;
 								   	margin: 0 auto;
                                    	text-align: center;
+                                   	@include m1000 {
+                                   		width: 100%;
+                                   		padding: 0 10px;
+                                   	}
                               	}
-header 							{}
-aside 							{}
-main 							{}
-footer 							{}
