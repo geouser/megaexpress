@@ -77,14 +77,8 @@ a {
 ------------------------*/
 body {
     padding-top: 198px;
-    @include mh750 {
-        padding-top: 180px;
-    }
-    @include mh660 {
-        padding-top: 160px;
-    }
     @include m1000 {
-        padding-top: 200px;
+        padding-top: 201px;
     }
     @include m750 {
         padding-top: 60px;
