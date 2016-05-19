@@ -23,6 +23,7 @@
         .slick-dots {
             bottom: 320px;
             text-align: center;
+            padding-left: 0;
         }
     }
     @include m360 {
