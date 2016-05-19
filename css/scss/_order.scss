@@ -186,7 +186,7 @@
 
 						&:before {
 							content: '';
-							@include transition (all, 0.3s);
+							@include transition (all, 0.2s);
 							box-sizing: border-box;
 							width: 14px;
 							height: 14px;
