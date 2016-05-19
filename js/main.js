@@ -59,6 +59,11 @@ $(window).resize(function() {
   }
 });
 
+$('li.ui-tabs-active').click(function(){
+  $('.ui-tabs-nav').css('height', 'auto');
+  $('.ui-tabs-nav.subTabsNav').css('display', 'block');
+});
+
   /*---------------------------
                                 MENU TOGGLE
   ---------------------------*/
