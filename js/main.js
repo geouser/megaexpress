@@ -41,6 +41,20 @@ $(window).resize(function() {
     });
   }
 });
+
+
+if ($(window).width() <= 750) {
+   var logo = $('.logo');
+    $(logo).insertAfter("header");
+}
+
+$(window).resize(function() {
+  if ($(window).width() <= 750) {
+    var logo = $('.logo');
+    $(logo).insertAfter("header");
+  }
+});
+
   /*---------------------------
                                 MENU TOGGLE
   ---------------------------*/

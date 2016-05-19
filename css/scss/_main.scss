@@ -2,29 +2,24 @@
     OFFER STYLES
 ------------------------*/
 .offer {
-    height: 715px;
+    height: 515px;
     position: relative;
     
     @include mh750 {
-        height: 700px;
+        height: 500px;
     }
     @include mh660 {
-        height: 600px;
+        height: 400px;
     }
     @include m1000 {
         height: 500px;
     }
     @include m850 {
-        height: 600px;
-        .slick-dots {
-            bottom: 320px;
-            text-align: center;
-            padding-left: 0;
-        }
+        height: 500px;
     }
-    @include m360 {
+    @include m750 {
        .slick-dots {
-            bottom: 300px;
+            display: none;
         }
     }
 
@@ -46,13 +41,10 @@
                 content: "";
                 display: inline-block;
                 vertical-align: middle;
-                @include m850 {
+                @include m750 {
                     display: none;
                 }
             }
-        }
-        @include m850 {
-            padding-bottom: 300px;
         }
 
 
@@ -70,12 +62,11 @@
             p {
                 text-align: left;
             }
-            @include m850 {
+            @include m850 {width: 450px;}
+            @include m750 {
                 display: block;
                 margin: 40px auto 0;
-                h2, h1 {font: 32px/42px $rb; text-align: center}
-                p,
-                h1 {text-align: center;}
+                h2, h1 {font: 32px/42px $rb; margin-bottom: 10px;}
             }
             @include m600 {
                 width: 100%;
@@ -85,7 +76,7 @@
                 h2, h1 {font: 28px/36px $rb; }
             }
             @include m360 {
-                 h2, h1 {font: 26px/30px $rb; margin-bottom: 5px;}
+                 h2, h1 {font: 26px/30px $rb;}
             }
         }
     }
@@ -93,15 +84,15 @@
     form {
         position: absolute;
         right: calc((100% - 970px) / 2);
-        top: calc(50% - 25px);
+        top: calc(50% - 115px);
         margin: auto;
         height: 270px;
         @include m1000 {
             top: calc(50% - 115px);
             right: 15px;
         }
-        @include m850 {
-            bottom: 10px;
+        @include m750 {
+            bottom: -75px;
             left: 0;
             right: 0;
             top: auto;
