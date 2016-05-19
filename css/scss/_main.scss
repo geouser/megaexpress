@@ -3,8 +3,34 @@
 ------------------------*/
 .offer {
     height: 715px;
-    padding: 200px 0 0 0;
+    padding: 196px 0 0 0;
     position: relative;
+    
+    @include mh750 {
+        padding: 176px 0 0 0;
+        height: 700px;
+    }
+    @include mh660 {
+        padding: 156px 0 0 0;
+        height: 600px;
+    }
+    @include m1000 {
+        padding-top: 0;
+        height: 500px;
+    }
+    @include m850 {
+        height: 600px;
+        .slick-dots {
+            bottom: 320px;
+            text-align: center;
+        }
+    }
+    @include m360 {
+       .slick-dots {
+            bottom: 300px;
+        }
+    }
+
     &__slider {
         height: 100%;
     }
@@ -14,6 +40,7 @@
         background-repeat: no-repeat;
         background-position: 50% 50%;
         height: 100%;
+        background-size: auto 100%;
         .wrapper { 
             height: 100%;
             text-align: left !important;
@@ -22,20 +49,46 @@
                 content: "";
                 display: inline-block;
                 vertical-align: middle;
+                @include m850 {
+                    display: none;
+                }
             }
         }
+        @include m850 {
+            padding-bottom: 300px;
+        }
+
+
         &__info {
             width: 500px;
             display: inline-block;
             vertical-align: middle;
             text-align: left;
             h2 {
-                font: 36px/48px $rb;
+             font: 36px/48px $rb;
               color: $blue;
               text-align: left;
+              text-transform: none;
             }
             p {
                 text-align: left;
+            }
+            @include m850 {
+                display: block;
+                margin: 40px auto 0;
+                h2, h1 {font: 32px/42px $rb; text-align: center}
+                p,
+                h1 {text-align: center;}
+            }
+            @include m600 {
+                width: 100%;
+                padding: 0 10px;
+            }
+            @include m500 {
+                h2, h1 {font: 28px/36px $rb; }
+            }
+            @include m360 {
+                 h2, h1 {font: 26px/30px $rb; margin-bottom: 5px;}
             }
         }
     }
@@ -46,6 +99,16 @@
         top: calc(50% - 25px);
         margin: auto;
         height: 270px;
+        @include m1000 {
+            top: calc(50% - 115px);
+            right: 15px;
+        }
+        @include m850 {
+            bottom: 10px;
+            left: 0;
+            right: 0;
+            top: auto;
+        }
     }
 
 }

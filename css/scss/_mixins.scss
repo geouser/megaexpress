@@ -261,6 +261,18 @@
   }
 }
 
+@mixin m400 {
+  @media (max-width: 400px) {
+    @content;
+  }
+}
+
+@mixin m500 {
+  @media (max-width: 500px) {
+    @content;
+  }
+}
+
 @mixin m600 {
   @media (max-width: 600px) {
     @content;
@@ -270,6 +282,12 @@
 
 @mixin m800 {
   @media (max-width: 800px) {
+    @content;
+  }
+}
+
+@mixin m850 {
+  @media (max-width: 850px) {
     @content;
   }
 }
@@ -294,6 +312,11 @@
 
 @mixin m1900min {
   @media (min-width: 1900px) {
+    @content;
+  }
+}
+@mixin mmh900 {
+  @media (min-height: 900px) {
     @content;
   }
 }

@@ -23,7 +23,23 @@ jQuery(document).ready(function($) {
     });
   });
 
+$('li:has(ul)').addClass('hasSub');
 
+if ($(window).width() <= 1000) {
+  $('li.hasSub').click(function(event){
+    event.preventDefault();
+    $(this).children('.sub').slideToggle();
+  });
+}
+
+$(window).resize(function() {
+  if ($(window).width() <= 1000) {
+     $('li.hasSub').click(function(){
+      event.preventDefault();
+      $(this).children('.sub').slideToggle();
+    });
+  }
+});
   /*---------------------------
                                 MENU TOGGLE
   ---------------------------*/
