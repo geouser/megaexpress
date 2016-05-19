@@ -140,6 +140,9 @@
 	padding: 20px 0 0;
 	margin: 0;
 
+	@media (min-width: 971px) {
+		display: block!important;
+	}
 	@media (max-width: $tablets) {
 		display: none;
 	}
