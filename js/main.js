@@ -24,6 +24,7 @@ jQuery(document).ready(function($) {
   });
 
 $('li:has(ul)').addClass('hasSub');
+$("#tabs, #subtabs").tabs();
 
 if ($(window).width() <= 1000) {
   $('li.hasSub').click(function(event){

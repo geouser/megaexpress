@@ -3,19 +3,15 @@
 ------------------------*/
 .offer {
     height: 715px;
-    padding: 196px 0 0 0;
     position: relative;
     
     @include mh750 {
-        padding: 176px 0 0 0;
         height: 700px;
     }
     @include mh660 {
-        padding: 156px 0 0 0;
         height: 600px;
     }
     @include m1000 {
-        padding-top: 0;
         height: 500px;
     }
     @include m850 {
@@ -309,6 +305,7 @@
     box-shadow: 0px 2px 16px 0px rgba( 0, 0, 0, .31);
     text-align: left;
     display: inline-block;
+    font-family: $rl;
 
     &__title {
         font-family: $rb;
