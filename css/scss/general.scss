@@ -76,12 +76,12 @@ a {
     HEADER STYLES
 ------------------------*/
 body {
-    padding-top: 196px;
+    padding-top: 200px;
     @include mh750 {
-        padding-top: 176px;
+        padding-top: 180px;
     }
     @include mh660 {
-        padding-top: 156px;
+        padding-top: 160px;
     }
     @include m1000 {
         padding-top: 200px;

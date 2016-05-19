@@ -44,14 +44,18 @@ $(window).resize(function() {
 
 
 if ($(window).width() <= 750) {
-   var logo = $('.logo');
-    $(logo).insertAfter("header");
+  var logo = $('.logo');
+  $(logo).insertAfter("header");
 }
 
 $(window).resize(function() {
   if ($(window).width() <= 750) {
     var logo = $('.logo');
     $(logo).insertAfter("header");
+  }
+  if ($(window).width() >= 750) {
+    var logo = $('.logo');
+    $(logo).insertBefore("nav");
   }
 });
 
