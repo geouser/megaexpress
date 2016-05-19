@@ -31,13 +31,10 @@
 		display: inline-block;
 		vertical-align: middle;
 		padding-right: 15px;
+		margin-right: 15px;
 		font-family: Verdana;
 		font-size: 13px;
 		position: relative;
-	}
-
-	span[typeof="ListItem"]:not(:first-child) {
-		margin-left: 15px;		
 	}
 
 	span[typeof="ListItem"]:not(:last-child) {
@@ -67,6 +64,16 @@
 .calculator {
 	h2 {
 		text-align: left;
+
+		@media (max-width: $phones) {
+			padding: 0 15px;
+		}
+	}
+
+	.wrapper {
+		@media (max-width: $phones) {
+			padding: 0;
+		}
 	}
 
 	&__box {
@@ -76,16 +83,31 @@
 		margin-bottom: 80px;
 		margin-top: 17px;
 
+		@media (max-width: $phones) {
+			border-left: 0;
+			border-right: 0;
+			margin-bottom: 40px;
+		}
+
 		form {
 			@include flex($wrap: wrap, $alignI: flex-start);
-			background-color: $blueD;
+			background-color: #015388;
 			background-image: none;
 			width: 100%;
-			padding: 43px;
+			padding: 43px 43px 33px 43px;
+
+			@media (max-width: $phones) {
+				padding: 30px 30px 10px 30px;
+			}
 
 
 			.col {
-				width: 32%
+				width: 32%;
+
+				@media (max-width: $phones) {
+					width: 100%;
+					margin-bottom: 20px;
+				}
 			}
 
 			.input {
@@ -93,7 +115,8 @@
 				margin-bottom: 10px;
 				background-color: #fff;
 
-				input[type="text"] {
+				input[type="text"],
+				input[type="tel"] {
 					margin-top: 0;
 					height: 45px;
 					padding-right: 30px;
@@ -156,6 +179,10 @@
 					height: 45px;
 					text-align: left;
 
+					@media (max-width: $phones) {
+						text-align: center;
+					}
+
 					p {
 						margin-top: 0;
 						color: #fff;
@@ -174,7 +201,7 @@
 						color: #fff;
 						font-family: $rb;
 						font-size: 14px;
-						margin-bottom: 10px;
+						margin-bottom: 7px;
 					}
 
 					label {
@@ -185,6 +212,17 @@
 						padding-left: 20px;
 						margin-right: 20px;
 						cursor: pointer;
+
+						@media (max-width: $tablets) {
+							margin-right: 5px;
+							padding-left: 16px;
+							font-size: 11px;
+						}
+
+						@media (max-width: $phones) {
+							font-size: 13px;
+							margin-right: 10px;
+						}
 
 						&:before {
 							content: '';
@@ -208,13 +246,45 @@
 							background-color: #fff;
 						}
 					}
-				}		
+				}
+
+				&.link {
+					background-color: transparent;
+					height: 45px;
+					line-height: 45px;
+					text-align: left;
+
+					a {
+						text-align: left;
+						display: inline-block;
+						vertical-align: middle;
+						color: $orange;
+						border-bottom: 2px dotted $orange;
+						font-family: $rb;
+						font-size: 16px;
+						text-decoration: none;
+						height: auto;
+						line-height: normal;
+					}
+				}
 			}
 
 			.button {
 				height: 45px;
 				text-transform: uppercase;
 				margin-top: 0;
+				line-height: 45px;
+
+				@media (max-width: $tablets) {
+					padding: 0;
+					font-size: 16px!important;
+				}
+
+				@media (max-width: $phones) {
+					padding: 0 10px;
+					display: inline-block;
+					width: auto;
+				}
 
 				&:before {
 					line-height: 44px;
