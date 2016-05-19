@@ -1,0 +1,52 @@
+.ui-tabs-nav {
+    list-style-type: none; 
+    text-align: left;
+    }
+li.ui-state-default {
+    display: inline-block;
+    margin-right: 20px; height: 40px;
+    background-color: $blue;
+    &:hover {
+        background-color: $blueHover;
+    }
+    &.ui-state-active {
+        background-color: $orange;
+        &:hover {
+            background-color: $orange;
+        }
+    }
+     a {
+        color: #FFF;
+        text-decoration: none;
+        text-transform: uppercase;
+        font: 16px/40px $rm;
+        position: relative;
+        z-index: 100;
+        padding: 0 18px;
+     }
+ }
+ #subtabs ul {
+     padding: 20px;
+     background-color: $blueD;
+ }
+ .subtabInfo {
+     @include flex($alignI: top, $justify: space-between, $wrap: wrap);
+     padding: 50px 0;
+     .card {
+        width: 214px;
+        padding: 20px 18px;
+        font-size: 13px;
+        margin-bottom: 30px;
+        &__title {
+            font-size: 18px;
+        }
+        &__price {
+            font-size: 13px;
+        }
+        &__mass,
+        &__mark {
+            font-size: 13px;
+        }
+     }
+ }
+

@@ -51,6 +51,11 @@ h2 {
   color: #000;
   display: block;
   text-transform: uppercase;
+  width: 100%;
+  text-align: left;
+  + p {
+      text-align: left;
+  }
 }
 .main-page h2 {
   width: 100%;
@@ -70,19 +75,33 @@ a {
 /*---------------------- 
     HEADER STYLES
 ------------------------*/
+body {
+    padding-top: 200px;
+    @include mh750 {
+        padding-top: 180px;
+    }
+    @include mh660 {
+        padding-top: 160px;
+    }
+    @include m1000 {
+        padding-top: 200px;
+    }
+    @include m750 {
+        padding-top: 60px;
+    }
+}
 header {
     margin: 0;
-    left:0;
+    left: 0;
     @include position(absolute, 0, auto, auto, 0);
     width: 100%;
     z-index: 100;
     background: #fff;
     @include transition(all, .4s);
 
-    @include m1000 {
-         @include position(fixed, 0, auto, auto, -100%);
-         width: 260px !important;
-         height: 100%;
+    @include m750 {
+         @include position(fixed, -100%, 0, auto, 0);
+         width: 100% !important;
          text-align: center;
          background-color: #fff;
          margin-top: 0;
@@ -98,13 +117,16 @@ header {
          -webkit-box-shadow: 0 0 4px rgba(0,0,0, .4);
                  box-shadow: 0 0 4px rgba(0,0,0, .4);
          
-         &.active {left: 0;}
+         &.active {top: 54px;}
          
          .wrapper {
                @include flexDirection(column);
                width: 100%;
         }
     }
+    @include mh700 {
+         height: 100%;
+     }
      &:after {
         content: '';
         display: block;
@@ -119,7 +141,7 @@ header {
         background-position: 50% 0%;
         right: 0;
         margin: auto;
-        @include m1000 {
+        @include m750 {
             display: none;
         }
     }
@@ -130,22 +152,31 @@ header {
         background-color: $blueD;
         color: #FFF;
         @include m1000 {
-            .button {
-                margin: 5px auto;
-                width: 100%;
+            .button {margin-bottom: 10px;}
+            .button:nth-of-type(2) {margin-left: 30px;}
+        }
+        @include m750 {
+            .button,
+            .button:nth-of-type(2) {
+                margin: 20px auto 0;
+                display: block;
             }
-            a {
+            a, span {
                 margin: 5px auto;
                 display: inline-block;
+                text-align: center;
                 width: 100%;
-                text-align: left;
             }
+        }
+        br {display: none;
+            @include m1000 {display: block;}
         }
         .wrapper {
             @include flex();
-            @include m1000 {
-                @include flex($alignI: start, $direction: column-reverse);
-                padding-top: 20px;
+            @include m1000 {display: block;}
+            @include m750 {
+                padding: 0;
+                @include flex($alignI: start, $direction: column);
                 -webkit-justify-content: space-around;
                         justify-content: space-around;
             }
@@ -154,8 +185,13 @@ header {
             height: 35px;
             width: 1px;
             vertical-align: middle;
+            display: inline-block;
             background-color: #1E5D75;
             @include m1000 {
+                margin: 0 9px;
+                height: 35px;
+            }
+            @include m750 {
                 display: none;
             }
         }
@@ -164,32 +200,14 @@ header {
      .header__bottom {
         padding: 30px 0;
         background-color: #fff;
-            @include mh750 {
-                 padding: 20px 0;
-            }
-            @include mh660 {
-                 padding: 10px 0;
-            }
-            @include m1000 {
-                padding: 20px 0;
-            }
-
+        @include m750 {
+            background-color: #EAF0F2;
+        }
         .wrapper {
             @include flex($justify: space-between);
-            @include m1000 {
+            @include m750 {
+                padding: 0;
                 @include flex($justify: space-around, $direction: column);
-                @include mmh900 {
-                    height: 600px;
-                }
-                @include mh900 {
-                    height: 480px;
-                }
-                @include mh750 {
-                    height: 400px;
-                }
-                @include mh700 {
-                    height: auto;
-                }
             }
         }
     }
@@ -258,19 +276,44 @@ header {
             display: block;
             margin-top: 5px;
             padding-left: 2px;
+            @include m1000 {
+                font-size: 9px;
+            }
         }
     }
     @include m1000 {
-        img {
-            height: auto;
-            margin: 5px auto 10px;
-        }
-        p {
+         p {
             padding: 0;
             font: 29px/19px $rb;
         }
         strong {
             text-align: center;
+        }
+        img {
+            width: 60px;
+            margin-bottom: 6px;
+        }
+    }
+    @include m750 {
+        text-align: center;
+        padding: 25px 0;
+        &:after {
+        content: '';
+        display: block;
+        width: 100%;
+        position: absolute;
+        bottom: -60px;
+        left: 0;
+        z-index: 2;
+        height: 60px;
+        background-image: url("../images/shadow.png");
+        background-repeat: no-repeat;
+        background-position: 50% 0%;
+        right: 0;
+        margin: auto;}
+        img {
+            height: auto;
+            margin: 5px auto 10px;
         }
     }
 }
@@ -281,7 +324,10 @@ nav {
     position: relative;
     z-index: 3;
     margin-left: 60px;
-     @include m1000 {
+    @include m1000 {
+        margin-left: 0;
+    }
+     @include m750 {
         width: 100%;
         margin-left: 0;
     }
@@ -299,8 +345,11 @@ nav ul {
             text-decoration: none;
             @include transition(all, .2s);
             @include m1000 {
+                margin-left: 10px;
+            }
+            @include m750 {
                 line-height: normal;
-                margin: 20px 0 0 0;
+                margin: 20px 0;
             }
         }
         &:first-of-type a {margin-left: 0;}
@@ -332,19 +381,19 @@ nav ul {
                     box-shadow: 0 3px 3px rgba(0,0,0, .1);
             li {
                 display: block;
-                text-align: left;
+                text-align: center;
                 a {
                     line-height: normal;
                     margin: 6px auto;
                     font-size: 15px;
                 }
             }
-            @include m1000 {
+            @include m750 {
                 position: static;
                 display: none;
                 opacity: 1;
                 z-index: 1;
-                padding: 0 0 0 20px;
+                padding: 0;
                 margin: 0;
                 -webkit-box-shadow: none;
                         box-shadow: none;
@@ -355,14 +404,27 @@ nav ul {
             opacity: 1;
             top: 90%;
         }
+         @include m750 {
+            &:before {
+                content: "";
+                display: block;
+                border-top: 1px solid #DDDDDD;
+                width: 290px;
+                margin: 0 auto;
+            }
+             &:first-child:before {display: none;}
+         }
+          @include m360 {
+              &:before {width: 200px;}
+          }
     }
 
-    @include m1000 { 
+    @include m750 { 
         display: block;
         height: 100%;
         overflow: scroll;
         position: relative;
-        text-align: left;
+        text-align: center;
         margin: 0 0 20px;
     }
 }
@@ -372,42 +434,37 @@ nav ul {
 /* ------- menu toggle --------- */
 .menu-button {    
     display: none;
-    width: 50px;
-    height: 50px;
-    @include position(fixed, 15px, 15px, auto, auto);
+    width: 100%;
+    height: 54px;
+    @include position(fixed, 0px, 0px, auto, 0);
     margin: auto; 
     cursor: pointer;
     z-index: 100;
     background-color: $blueD;
     border: none;
-    -webkit-border-radius: 4px;
-    border-radius: 4px;
     .menu-line {
         display: block;
         @include position(absolute, auto, 0, auto, 0);
-        width: 60%;
+        width: 44px;
         height: 5px;
         background-color: #fff;
-        -webkit-border-radius: 1px;
-        border-radius: 1px;
+        -webkit-border-radius: 2px;
+        border-radius: 2px;
         @include transition(all, .4s);
         }
 
       .top_line                     {   top: 12px;  margin: auto;}
-      .middle_line                  {   top: 22px;  margin: auto;}
-      .bottom_line                  {   bottom: 12px; margin: auto;}
+      .middle_line                  {   top: 24px;  margin: auto;}
+      .bottom_line                  {   bottom: 13px; margin: auto;}
 
-      &.active                      {   -webkit-border-radius: 6px; border-radius: 6px;}
       &.active .top_line            {   @include transform(rotate(45deg)); top: 45%;}
       &.active .bottom_line         {   @include transform(rotate(-45deg)); bottom: 45%;}
       &.active .middle_line         {   width: 0; left: 50%;}
 
-    @include m1000 {
+    @include m750 {
         display: block;
     }
-    @include m360 {
-        right: 5px;
-    }
+
 
 }
 
@@ -510,6 +567,8 @@ form {
     }
 }
 
+
 @import 'main';
+@import 'tariffs';
 @import 'footer';
 @import 'order';

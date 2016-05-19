@@ -24,6 +24,7 @@ jQuery(document).ready(function($) {
   });
 
 $('li:has(ul)').addClass('hasSub');
+$("#tabs, #subtabs").tabs();
 
 if ($(window).width() <= 1000) {
   $('li.hasSub').click(function(event){
@@ -40,6 +41,24 @@ $(window).resize(function() {
     });
   }
 });
+
+
+if ($(window).width() <= 750) {
+  var logo = $('.logo');
+  $(logo).insertAfter("header");
+}
+
+$(window).resize(function() {
+  if ($(window).width() <= 750) {
+    var logo = $('.logo');
+    $(logo).insertAfter("header");
+  }
+  if ($(window).width() >= 750) {
+    var logo = $('.logo');
+    $(logo).insertBefore("nav");
+  }
+});
+
   /*---------------------------
                                 MENU TOGGLE
   ---------------------------*/
