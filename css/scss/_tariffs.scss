@@ -1,10 +1,20 @@
 .ui-tabs-nav {
     list-style-type: none; 
     text-align: left;
+    margin: 0;
+    margin-top: 30px;
+    @include m750 {
+        height: 40px;
+        overflow: hidden;
+        &.subTabsNav {
+            display: none;
+        }
+    }
     }
 li.ui-state-default {
     display: inline-block;
-    margin-right: 20px; height: 40px;
+    height: 40px;
+    margin-right: 20px;
     background-color: $blue;
     &:hover {
         background-color: $blueHover;
@@ -24,10 +34,24 @@ li.ui-state-default {
         z-index: 100;
         padding: 0 18px;
      }
+
+     @include m750 {
+        width: 100%;
+        a {
+            width: 100%;
+            display: block;
+        }
+    }
  }
  #subtabs ul {
-     padding: 20px;
      background-color: $blueD;
+ }
+ .subTabsNav {
+     padding: 0 20px 20px;
+     margin-top: 0;
+     li {
+         margin: 20px 20px 0 0;
+     }
  }
  .subtabInfo {
      @include flex($alignI: top, $justify: space-between, $wrap: wrap);
@@ -47,6 +71,20 @@ li.ui-state-default {
         &__mark {
             font-size: 13px;
         }
+        @include m500 {
+            width: 100%;
+            padding: 40px 40px;
+        }
+        @include m360 {
+            width: 100%;
+            padding: 20px 30px;
+        }
      }
  }
 
+@include m500 {
+    .tabsSection {
+        width: 90%;
+        margin: 0 auto;
+    }
+}
