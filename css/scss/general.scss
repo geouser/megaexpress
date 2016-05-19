@@ -113,7 +113,7 @@ header {
           @include mh700 {
             height: 100%;
         }
-         &.active {top: 54px;}
+         &.active {top: 54px; z-index: 1000;}
          
          .wrapper {
                @include flexDirection(column);
@@ -436,6 +436,7 @@ nav ul {
     z-index: 100;
     background-color: $blueD;
     border: none;
+    z-index: 2000;
     .menu-line {
         display: block;
         @include position(absolute, auto, 0, auto, 0);
