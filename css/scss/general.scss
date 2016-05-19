@@ -76,7 +76,7 @@ a {
     HEADER STYLES
 ------------------------*/
 body {
-    padding-top: 196px;
+    padding-top: 156px;
     @include m1000 {
         padding-top: 201px;
     }
@@ -192,11 +192,8 @@ header {
     }
 
      .header__bottom {
-        padding: 30px 0;
+       padding: 10px 0;
         background-color: #fff;
-        @include m1000 {
-            padding: 10px 0;
-        }
         @include m750 {
             background-color: #EAF0F2;
         }
