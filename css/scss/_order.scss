@@ -1,0 +1,236 @@
+.breadcrumbs {
+	background-image: url(../images/breadcrumbs.jpg);
+	background-size: auto 100%;
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	text-align: center;
+	margin-bottom: 35px;
+
+	.wrapper {
+		text-align: left;
+		position: relative;
+		padding: 20px 0;
+		border-left: 15px solid transparent;
+		border-right: 15px solid transparent;
+
+		&:after {
+			content: '';
+			width: 100%;
+			height: 2px;
+			background-color: #F5F5F5;
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			right: 0;
+		}
+	}
+
+	span[typeof="ListItem"] {
+		display: inline-block;
+		vertical-align: middle;
+		padding-right: 15px;
+		font-family: Verdana;
+		font-size: 13px;
+		position: relative;
+	}
+
+	span[typeof="ListItem"]:not(:first-child) {
+		margin-left: 15px;		
+	}
+
+	span[typeof="ListItem"]:not(:last-child) {
+		
+		a {
+			color: $orange;
+			text-decoration: underline;
+
+			&:hover {
+				text-decoration: none;
+			}
+		}
+
+		&:after {
+			content: '/';
+			display: inline-block;
+			vertical-align: middle;
+			position: absolute;
+			right: -5px;
+			top: 0px;
+			color: #CACACA;
+		}
+	}
+}
+
+
+.calculator {
+	h2 {
+		text-align: left;
+	}
+
+	&__box {
+		background-image: url(../images/pattern.jpg);
+		background-repeat: repeat;
+		border: 6px solid transparent;
+		margin-bottom: 80px;
+		margin-top: 17px;
+
+		form {
+			@include flex($wrap: wrap, $alignI: flex-start);
+			background-color: $blueD;
+			background-image: none;
+			width: 100%;
+			padding: 43px;
+
+
+			.col {
+				width: 32%
+			}
+
+			.input {
+				position: relative;
+				margin-bottom: 10px;
+				background-color: #fff;
+
+				input[type="text"] {
+					margin-top: 0;
+					height: 45px;
+					padding-right: 30px;
+					white-space: nowrap;
+			        overflow: hidden;
+			        text-overflow: ellipsis;
+				}
+
+				select {
+					width: 100%;
+					background-color: #fff;
+					border: 0;
+					height: 45px;
+					padding-left: 15px;
+					color: #464646;
+					font-size: 12px;
+					font-family: Verdana;
+					padding-right: 30px;
+					white-space: nowrap;
+			        overflow: hidden;
+			        text-overflow: ellipsis;
+			        -webkit-appearance: none;
+					-moz-appearance:    none;
+					appearance:         none;
+					position: relative;
+					z-index: 2;
+					background-color: transparent;
+				}
+
+				&.select:after {
+					content: '\25BE';
+					width: 30px;
+					height: 100%;
+					right: 0;
+					top: 0;
+					bottom: 0;
+					position: absolute;
+					background-color: #fff;
+					line-height: 45px;
+					z-index: 1;
+				}
+
+				&.place:after {
+					content: '';
+					width: 30px;
+					height: 100%;
+					right: 0;
+					top: 0;
+					bottom: 0;
+					position: absolute;
+					background-color: #fff;
+					background-image: url(../images/pin.jpg);
+					background-position: 50% 50%;
+					background-repeat: no-repeat;
+				}
+
+				&.sum {
+					background-color: transparent;
+					line-height: 45px;
+					height: 45px;
+					text-align: left;
+
+					p {
+						margin-top: 0;
+						color: #fff;
+						font-family: $rb;
+						font-size: 18px;
+						display: inline-block;
+					}
+				}
+
+				&.radios {
+					background-color: transparent;
+					text-align: left;
+
+					p {
+						margin-top: 0;
+						color: #fff;
+						font-family: $rb;
+						font-size: 14px;
+						margin-bottom: 10px;
+					}
+
+					label {
+						color: #fff;
+						font-family: Verdana;
+						font-size: 12px;
+						position: relative;
+						padding-left: 20px;
+						margin-right: 20px;
+						cursor: pointer;
+
+						&:before {
+							content: '';
+							@include transition (all, 0.3s);
+							box-sizing: border-box;
+							width: 14px;
+							height: 14px;
+							border-radius: 50%;
+							border: 3px solid #fff;
+							position: absolute;
+							left: 0;
+							top: 2px;
+						}
+					}
+
+					input[type="radio"] {
+						display: none;
+					}
+					input[type="radio"]:checked + label {
+						&:before {
+							background-color: #fff;
+						}
+					}
+				}		
+			}
+
+			.button {
+				height: 45px;
+				text-transform: uppercase;
+				margin-top: 0;
+
+				&:before {
+					line-height: 44px;
+				}
+			}
+		}
+	}
+}
+
+
+input {
+	width: 100%;
+	background-color: #fff;
+	border: 0;
+	color: #464646;
+
+	&::-webkit-input-placeholder {color:#8e8e8e;}
+	&::-moz-placeholder          {color:#8e8e8e;}
+	&:-moz-placeholder           {color:#8e8e8e;}
+	&:-ms-input-placeholder      {color:#8e8e8e;}
+}
