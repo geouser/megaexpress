@@ -95,18 +95,13 @@
             <span class="menu-line middle_line"></span>
             <span class="menu-line bottom_line"></span>
         </button>
-        
+
 
         <div class="breadcrumbs">
             <div class="wrapper">
                 <span property="itemListElement" typeof="ListItem">
                     <a href="#" property="item">
                         <span property="name">Главная</span>
-                    </a>
-                </span>
-                <span property="itemListElement" typeof="ListItem">
-                    <a href="#" property="item">
-                        <span property="name">Страница</span>
                     </a>
                 </span>
                 <span property="itemListElement" typeof="ListItem">
@@ -125,8 +120,8 @@
                             <div class="input place">
                                 <input type="text" name="city-start" placeholder="Откуда:">
                             </div>
-                            <div class="input place">
-                                <input type="text" name="city-end" placeholder="Куда:">
+                            <div class="input place insert-place">
+                                <input type="text" name="city-end[]" placeholder="Куда:">
                             </div>
                             <input type="hidden" name="distance" data-distance="">
 
@@ -139,6 +134,10 @@
                                 <label for="time-30">30 мин.</label>
                                 <input type="radio" name="time" value="60" id="time-60">
                                 <label for="time-60">1 час</label>
+                            </div>
+
+                            <div class="input link">
+                                <a href="#" class="insert-more">Добавить адрес</a>
                             </div>
                         </div> <!-- end col -->
 
@@ -167,7 +166,7 @@
                                 </select>
                             </div>
                             <div class="input phone">
-                                <input type="text" name="phone" placeholder="Ваш телефон:">
+                                <input type="tel" name="phone" placeholder="Ваш телефон:">
                             </div>
                         </div> <!-- end col -->
 
