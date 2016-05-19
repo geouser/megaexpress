@@ -1,0 +1,207 @@
+.service {
+	@extend %clearfix;
+
+	aside {
+		width: 240px;
+		display: inline-block;
+		vertical-align: top;
+		float: left;
+		background-color: #015388;
+
+		@media (max-width: $tablets) {
+			width: 100%;
+			margin-bottom: 30px;
+			float: none;
+		}
+
+		.sidebar_menu_btn {
+			display: none;
+
+			@media (max-width: $tablets) {
+				width: 100%;
+				display: block;
+				height: 60px;
+				position: relative;
+				color: #fff;
+				padding-left: 20px;
+				text-transform: uppercase;
+				font-family: $rb;
+				font-size: 18px;
+				text-align: left;
+				background-color: #015388;
+				border: 0;
+
+				&:after {
+					content: '\25BE';
+					height: 100%;
+					line-height: 58px;
+					color: $orange;
+					position: absolute;
+					right: 0;
+					top: 0;
+					bottom: 0;
+					padding-right: 40px;
+					font-size: 25px;
+
+					@media (max-width: $phones) {
+						padding-right: 20px;
+					}
+				}
+			}
+		}
+	}
+
+	.content {
+		width: calc(100% - 240px);
+		padding-left: 50px;
+		display: inline-block;
+		vertical-align: top;
+		float: right;
+
+		@media (max-width: $tablets) {
+			width: 100%;
+			padding-left: 0;
+			float: none;
+		}
+
+		.form__box {
+			margin-top: 60px;
+
+			@media (max-width: $phones) {
+				width: calc(100% + 30px);
+				margin-left: -15px;
+				margin-right: -15px;
+			}
+
+			form {
+				position: relative;
+
+				img.girl {
+					position: absolute;
+					bottom: 0;
+					left: 23px;
+
+					@media (max-width: $phones) {
+						display: none;
+					}
+				}
+
+				.col {
+					width: 50%;
+					@media (max-width: $phones) {
+						width: 100%;
+					}
+				}
+
+				.title {
+					margin-bottom: 7px;
+					margin-top: 0;
+
+					& + small {
+						color: #fff;
+						font-size: 12px;
+						font-family: $rl;
+						margin-bottom: 10px;
+						display: block;
+						line-height: 18px;
+					}
+				}
+			}
+		}
+	}
+
+	main {
+		text-align: left;
+
+		h2 {
+			margin-bottom: 15px;
+		}
+
+		img {
+			width: 100%;
+			height: auto;
+			margin-bottom: 15px;
+
+			@media (max-width: $phones) {
+				width: calc(100% + 30px);
+				margin-left: -15px;
+				margin-right: -15px;
+			}
+		}
+
+		p {
+			text-align: left;
+			margin-bottom: 15px;
+		}
+	}
+}
+
+.navigation {
+	padding: 20px 0 0;
+	margin: 0;
+
+	@media (max-width: $tablets) {
+		display: none;
+	}
+
+	li {
+		list-style: none;
+		text-align: left;
+		
+	}
+
+	p {
+		color: #fff;
+		font-family: $rb;
+		font-size: 18px;
+		padding-left: 20px;
+	}
+
+	.subnavigation {
+		margin: 5px 0 15px;
+
+		li {
+			border-left: 20px solid transparent;
+			border-right: 20px solid transparent;
+			border-bottom: 1px solid rgba(255, 255, 255, .1);
+			@include transition (all, 0.3s);
+
+			&:hover,
+			&.active {
+				background-color: $orange;
+			}
+			&:hover a,
+			&.active a {
+				border-bottom: 0;
+			}
+			&:hover a:before,
+			&.active a:before {
+				background-color: #fff;
+			}
+
+			a {
+				font-family: $rl;
+				color: #fff;
+				font-size: 14px;
+				text-decoration: none;
+				display: block;
+				height: 100%;
+				width: 100%;
+				padding: 10px 0 10px 10px;
+				position: relative;
+
+				&:before {
+					content: '';
+					width: 4px;
+					height: 4px;
+					background-color: $orange;
+					position: absolute;
+					left: 0;
+					top: 50%;
+					margin-top: -2px;
+					@include transition (all, 0.3s);
+				}
+			}
+		}
+	}
+}

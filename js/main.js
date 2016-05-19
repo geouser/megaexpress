@@ -154,13 +154,20 @@ $(window).resize(function() {
 
 
 
-  /*---------------------------
-                                CALCULATOR
-  ---------------------------*/
-$('a.insert-more').on('click', function(event) {
-  event.preventDefault();
-  $('.insert-place').removeClass('insert-place').after('<div class="input place insert-place"><input type="text" name="city-end[]" placeholder="Куда:"></div>')
-});
+    /*---------------------------
+                                  Services
+    ---------------------------*/
+  $('.sidebar_menu_btn').on('click', function(event) {
+    event.preventDefault();
+    $('.navigation').slideToggle();
+  });
+    /*---------------------------
+                                  CALCULATOR
+    ---------------------------*/
+  $('a.insert-more').on('click', function(event) {
+    event.preventDefault();
+    $('.insert-place').removeClass('insert-place').after('<div class="input place insert-place"><input type="text" name="city-end[]" placeholder="Куда:"></div>')
+  });
 
 
 
