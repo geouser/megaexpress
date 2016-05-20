@@ -246,6 +246,10 @@ header {
     position: relative;
     display: block;
     text-decoration: none;
+
+    &:hover {
+        text-decoration: none;
+    }
 	& img {
      height: 100%;
      display: inline-block;
@@ -457,7 +461,7 @@ nav ul {
       .bottom_line                  {   bottom: 13px; margin: auto;}
 
       &.active .top_line            {   @include transform(rotate(45deg)); top: 45%;}
-      &.active .bottom_line         {   @include transform(rotate(-45deg)); bottom: 45%;}
+      &.active .bottom_line         {   @include transform(rotate(-45deg)); bottom: 46%;}
       &.active .middle_line         {   width: 0; left: 50%;}
 
     @include m750 {

@@ -111,9 +111,9 @@ if ($(window).width() >= 750) {
     $(this).toggleClass('active');
     $(this).siblings('header').toggleClass('active');
     if ($('header').hasClass('active')) {
-        $('body, html').css('overflow', 'hidden');
+        $('body').css('overflow', 'hidden');
       } else {
-        $('body, html').css('overflow', 'visible');
+        $('body').css('overflow', 'visible');
       }
   });
 
@@ -121,7 +121,15 @@ if ($(window).width() >= 750) {
   $('.offer__slider').slick({
     dots: true,
     arrows: false,
-    fade: true
+    fade: true,
+    responsive: [
+      {
+        breakpoint: 750,
+        settings: {
+          dots: false
+        }
+      }
+    ]
   });
 
   $('.clients__slider').slick({
