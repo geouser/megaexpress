@@ -6,28 +6,15 @@
   height: 500px;
   position: relative;
 
-  @include m800 {
-    height: 400px;
+  @include m750 {
+    margin-bottom: 140px;
+    position: relative;
   }
-
-  @include m600 {
-    padding: 0;
-    height: auto;
-  }
-
 
   .wrapper {
     height: 100%;
     @extend %vertAlign;
     text-align: right;
-
-    @include m600 {
-      height: auto;
-      padding: 25px 15px;
-      &:before {
-        display: none;
-      }
-    }
   }
 
   .map_canvas {
@@ -36,11 +23,6 @@
     @include position(absolute, 0, 0, 0, 0);
     z-index: 5;
 
-    @include m600 {
-      position: relative;
-      height: 250px;
-      width: 100%;
-    }
   }
 }
 
@@ -57,6 +39,10 @@
   box-shadow: 0px 2px 21px 0px rgba( 0, 0, 0, .31 );
   color: #000;
   font: 12px $v;
+  @include m750 {
+    @include position(absolute, auto, 0, -88px, 0);
+    margin: auto;
+  }
   
   
   a {
@@ -103,11 +89,6 @@
       left: 0;
       top: 0;
     }
-  }
-
-  @include m600 {
-    width: 100%;
-    box-shadow: none;
   }
 
   &:before {

@@ -26,6 +26,8 @@ jQuery(document).ready(function($) {
 $('li:has(ul)').addClass('hasSub');
 $("#tabs, #subtabs").tabs();
 
+
+
 if ($(window).width() <= 1000) {
   $('li.hasSub').click(function(event){
     event.preventDefault();
@@ -78,8 +80,28 @@ $(window).resize(function() {
   if ($(window).width() >= 750) {
     var logo = $('.logo');
     $(logo).insertBefore("nav");
+
+    $("nav").on({
+      mouseenter: function () {
+           $('header').css('z-index', '102');
+      },
+      mouseleave: function () {
+           $('header').css('z-index', '100');
+      }
+  });
   }
 });
+
+if ($(window).width() >= 750) {
+  $("nav").on({
+      mouseenter: function () {
+           $('header').css('z-index', '102');
+      },
+      mouseleave: function () {
+           $('header').css('z-index', '100');
+      }
+  });
+}
 
   /*---------------------------
                                 MENU TOGGLE
@@ -168,6 +190,55 @@ $(window).resize(function() {
     event.preventDefault();
     $('.insert-place').removeClass('insert-place').after('<div class="input place insert-place"><input type="text" name="city-end[]" placeholder="Куда:"></div>')
   });
+
+
+  /*---------------------------
+                              GOOGLE MAP
+---------------------------*/
+  var map;
+  function googleMap_initialize() {
+    var lat = $('#map_canvas').data('lat');
+    var long = $('#map_canvas').data('long');
+    var mapCenterCoord = new google.maps.LatLng(lat+0.001, long+0.006);
+    var mapMarkerCoord = new google.maps.LatLng(lat, long);
+    if ( $(window).width() < 768 ) {
+      mapCenterCoord = new google.maps.LatLng(lat, long);
+      mapMarkerCoord = new google.maps.LatLng(lat, long);
+    }
+    $(window).resize(function(event) {
+      if ( $(window).width() < 768 ) {
+        mapCenterCoord = new google.maps.LatLng(lat, long);
+        mapMarkerCoord = new google.maps.LatLng(lat, long);
+      } else {
+        mapCenterCoord = new google.maps.LatLng(lat+0.001, long+0.006);
+        mapMarkerCoord = new google.maps.LatLng(lat, long);
+      }
+    });
+
+    var mapOptions = {
+      center: mapCenterCoord,
+      zoom: 16,
+      //draggable: false,
+      disableDefaultUI: true,
+      scrollwheel: false,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
+
+    map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
+    var markerImage = new google.maps.MarkerImage('images/location.png');
+    var marker = new google.maps.Marker({
+      icon: markerImage,
+      position: mapMarkerCoord, 
+      map: map,
+      title:"Чисто Строй"
+    });
+    
+    $(window).resize(function (){
+      map.setCenter(mapCenterCoord);
+    });
+  }
+
+  googleMap_initialize(); 
 
 
 

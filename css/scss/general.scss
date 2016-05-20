@@ -92,6 +92,7 @@ header {
     z-index: 100;
     background: #fff;
     @include transition(all, .4s);
+    
 
     @include m750 {
         @include position(fixed, -100%, 0, auto, 0);
@@ -371,9 +372,10 @@ nav ul {
             top: 120%;
             min-width: 160px;
             background-color: #FFF;
-            @include transition(all, .4s);
+            @include transition(all, .2s);
             -webkit-box-shadow: 0 3px 3px rgba(0,0,0, .1);
                     box-shadow: 0 3px 3px rgba(0,0,0, .1);
+
             li {
                 display: block;
                 text-align: center;
@@ -394,12 +396,6 @@ nav ul {
                         box-shadow: none;
             }
         }
-        &:hover .sub {
-            z-index: 2;
-            opacity: 1;
-            top: 90%;
-            visibility: visible;
-        }
          @include m750 {
             &:before {
                 content: "";
@@ -413,6 +409,12 @@ nav ul {
           @include m360 {
               &:before {width: 200px;}
           }
+        &:hover .sub {
+            z-index: 2;
+            opacity: 1;
+            top: 85%;
+            visibility: visible;
+        }
     }
 
     @include m750 { 
@@ -597,6 +599,23 @@ form {
             margin: 0;
             width: 270px;
             height: 45px;
+        }
+        @include m750 {
+            width: 100%;
+            input,
+            input:nth-of-type(2),
+            input[name="message"] {
+                width: 100%;
+                margin: 0 auto 20px;
+            }
+            .button {
+                width: 205px;
+                display: block;
+                margin: 0 auto;
+            }
+            .wrap {
+                padding: 30px;
+            }    
         }
     }
 }
