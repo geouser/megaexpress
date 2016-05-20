@@ -141,3 +141,36 @@
     }
   }
 }
+
+
+.gmnoprint>div {
+  background: transparent !important;
+  -webkit-box-shadow: none!important;
+          box-shadow: none!important;
+}
+.gmnoprint>div>div>div {
+  background-color: #FFF!important;
+  overflow: hidden!important;
+  margin-bottom: 5px;
+  width: 35px!important;
+  height: 35px!important;
+  -webkit-border-radius: 50%!important;
+          border-radius: 50%!important;
+}
+.gmnoprint>div>div>div:nth-child(2) {
+  display: none;
+}
+.gmnoprint>div>div>div>div img{
+  display: none;
+}
+.gm-style-cc,
+.gm-svpc,
+a[title="Нажмите, чтобы отобразить эту область в Картах Google"] {
+  opacity: 0 !important;
+  visibility: hidden;
+}
+.gmnoprint.gm-bundled-control {
+  right: auto!important;
+  left: 15px!important;
+  bottom: 50%!important;
+}

@@ -227,7 +227,7 @@ if ($(window).width() >= 750) {
       center: mapCenterCoord,
       zoom: 16,
       //draggable: false,
-      disableDefaultUI: true,
+      disableDefaultUI: false,
       scrollwheel: false,
       mapTypeId: google.maps.MapTypeId.ROADMAP
     };
