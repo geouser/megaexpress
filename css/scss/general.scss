@@ -92,15 +92,16 @@ header {
     z-index: 100;
     background: #fff;
     @include transition(all, .4s);
+    
 
     @include m750 {
-         @include position(fixed, -100%, 0, auto, 0);
-         width: 100% !important;
-         text-align: center;
-         background-color: #fff;
-         margin-top: 0;
-         z-index: 100;
-         overflow: scroll;
+        @include position(fixed, -100%, 0, auto, 0);
+        width: 100% !important;
+        text-align: center;
+        background-color: #fff;
+        margin-top: 0;
+        z-index: 100;
+        overflow: scroll;
         flex: 1;
         display: flex;
         display: -webkit-flex;
@@ -368,15 +369,17 @@ nav ul {
             left: 20px;
             display: block;
             z-index: -1;
+            visibility: hidden;
             opacity: 0;
             padding: 15px 20px 15px 15px;
             margin: 0;
             top: 120%;
             min-width: 160px;
             background-color: #FFF;
-            @include transition(all, .4s);
+            @include transition(all, .2s);
             -webkit-box-shadow: 0 3px 3px rgba(0,0,0, .1);
                     box-shadow: 0 3px 3px rgba(0,0,0, .1);
+
             li {
                 display: block;
                 text-align: center;
@@ -397,11 +400,6 @@ nav ul {
                         box-shadow: none;
             }
         }
-        &:hover .sub {
-            z-index: 2;
-            opacity: 1;
-            top: 90%;
-        }
          @include m750 {
             &:before {
                 content: "";
@@ -415,6 +413,12 @@ nav ul {
           @include m360 {
               &:before {width: 200px;}
           }
+        &:hover .sub {
+            z-index: 2;
+            opacity: 1;
+            top: 85%;
+            visibility: visible;
+        }
     }
 
     @include m750 { 
@@ -564,6 +568,60 @@ form {
         margin-top: 15px;
         font: 18px $rm !important;
     }
+    &.big {
+        width: 940px;
+        margin: 50px auto 80px;
+        background-image: url(../images/pattern.jpg);
+        background-repeat: repeat;
+        background-size: auto;
+        border: 6px solid transparent;
+        background-color: $blue;
+        padding: 0;
+        text-align: center;
+        h2,p {text-align: center;}
+        p    {margin-bottom: 20px;}
+        .wrap {
+            padding: 30px 0 45px;
+        }
+        input {
+            height: 45px;
+            width: 270px;
+            padding-left: 15px;
+            color: #464646;
+            font-size: 12px;
+            font-family: Verdana;
+            padding-right: 30px;
+            display: inline-block;
+            margin-top: 14px;
+            &:nth-of-type(2) {margin: 0 10px;}
+            &[name="message"] {
+                width: 555px;
+                margin-right: 10px;
+            }
+        }
+        .button {
+            margin: 0;
+            width: 270px;
+            height: 45px;
+        }
+        @include m750 {
+            width: 100%;
+            input,
+            input:nth-of-type(2),
+            input[name="message"] {
+                width: 100%;
+                margin: 0 auto 20px;
+            }
+            .button {
+                width: 205px;
+                display: block;
+                margin: 0 auto;
+            }
+            .wrap {
+                padding: 30px;
+            }    
+        }
+    }
 }
 
 
@@ -572,4 +630,5 @@ form {
 @import 'footer';
 @import 'order';
 @import 'about';
+@import 'contacts';
 @import 'services';
