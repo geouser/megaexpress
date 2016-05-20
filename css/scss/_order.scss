@@ -306,3 +306,32 @@ input {
 	&:-moz-placeholder           {color:#8e8e8e;}
 	&:-ms-input-placeholder      {color:#8e8e8e;}
 }
+
+
+.ui-autocomplete {
+    max-height: 150px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background-color: #fff;
+    width: 250px;
+    -webkit-box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.75);
+	box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.75);
+
+
+    li {
+    	border-bottom: 1px solid #8e8e8e;
+    	padding: 3px 0 3px 10px;
+    	font-size: 14px;
+    	font-family: $rl;
+    	cursor: pointer;
+    	@include transition(all, 0.3s);
+		
+		&:hover {
+			color: $orange;
+		}
+    }
+}
+.ui-helper-hidden-accessible {
+	display: none;
+}
