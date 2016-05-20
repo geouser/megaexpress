@@ -4,17 +4,11 @@
 .offer {
     height: 515px;
     position: relative;
-    
-    @include mh750 {
-        height: 500px;
-    }
+
     @include mh660 {
-        height: 400px;
+        height: 450px;
     }
     @include m1000 {
-        height: 500px;
-    }
-    @include m850 {
         height: 500px;
     }
     @include m750 {

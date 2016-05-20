@@ -154,18 +154,62 @@
   margin-bottom: 5px;
   width: 35px!important;
   height: 35px!important;
+  position: relative;
+  box-shadow: 0px 0px 2px rgba(0,0,0,.2);
+  -webkit-box-shadow: 0px 0px 3px rgba(0,0,0,.2);
+      left: 0!important; top: 0!important;
   -webkit-border-radius: 50%!important;
           border-radius: 50%!important;
 }
 .gmnoprint>div>div>div:nth-child(2) {
   display: none;
 }
+.gmnoprint>div>div>div:nth-child(1)>div:before {
+  content: "+";
+  display: block;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  color: #4D4D4D;
+  margin: auto;
+  position: absolute;
+  font-size: 32px;
+  font-weight: 100;
+  text-align: center;
+  font-family: $rl;
+  line-height: 1;
+  margin-top: -1px;
+}
+.gmnoprint>div>div>div:nth-child(3)>div:before {
+  content: "";
+  display: block;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  color: #4D4D4D;
+  margin: auto;
+  position: absolute;
+  font-size: 32px;
+  font-weight: 100;
+  text-align: center;
+  font-family: $rl;
+  line-height: 1;
+  margin-top: 17px;
+  width: 16px;
+  height: 2px;
+  border-top: 2px solid #4D4D4D;
+}
 .gmnoprint>div>div>div>div img{
   display: none;
 }
+.gmnoprint>div>div>div>div:before {
+  
+}
 .gm-style-cc,
 .gm-svpc,
-a[title="Нажмите, чтобы отобразить эту область в Картах Google"] {
+.gm-style-mtc {
   opacity: 0 !important;
   visibility: hidden;
 }
@@ -173,4 +217,7 @@ a[title="Нажмите, чтобы отобразить эту область �
   right: auto!important;
   left: 15px!important;
   bottom: 50%!important;
+  @include m750 {
+    bottom: 80%!important;
+  }
 }

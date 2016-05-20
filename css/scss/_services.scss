@@ -1,6 +1,5 @@
 .service {
 	@extend %clearfix;
-	padding-top: 20px;
 
 	aside {
 		width: 240px;
@@ -76,7 +75,6 @@
 
 			form {
 				position: relative;
-				padding-top: 25px;
 
 				img.girl {
 					position: absolute;
@@ -133,7 +131,7 @@
 
 		p {
 			text-align: left;
-			margin-bottom: 25px;
+			margin-bottom: 15px;
 		}
 	}
 }
@@ -192,7 +190,7 @@
 				display: block;
 				height: 100%;
 				width: 100%;
-				padding: 7px 0 7px 10px;
+				padding: 10px 0 10px 10px;
 				position: relative;
 
 				&:before {
