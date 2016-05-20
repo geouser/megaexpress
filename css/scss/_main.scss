@@ -102,7 +102,7 @@
 }
 
 .main-features {
-    padding: 50px 0;
+    padding: 50px 0 40px;
     background-color: $orange;
 
     @media (max-width: $phones) {
@@ -177,7 +177,7 @@
 .icon-money { background-position: -5px -662px; width: 40px; height: 40px; }
 
 .services {
-    padding: 70px 0 50px;
+    padding: 65px 0 50px;
     background-color: #0E0B09;
 
     @media (min-width: 500px) {
@@ -190,6 +190,7 @@
     h2 {
         color: #fff;
         margin-bottom: 50px;
+        text-align: center;
     }
 
     .container {
@@ -269,6 +270,7 @@
 
     h2 {
         margin-bottom: 30px;
+        text-align: center;
     }
 
     &__slider {
@@ -337,14 +339,14 @@
 
 
 .clients {
-    padding: 70px 0 50px;
+    padding: 70px 0 55px;
     background-color: #F3F3F3;
 
     &__title {
         position: relative;
         display: inline-block;
         width: auto;
-        margin-bottom: 30px;
+        margin-bottom: 40px;
 
         h2 {
             display: inline-block;
@@ -455,6 +457,7 @@
 
     h2 {
         margin-bottom: 35px;
+        text-align: center;
     }
 
     article {
