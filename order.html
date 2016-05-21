@@ -115,13 +115,13 @@
                 <h2>Вызвать автомобиль</h2>
 
                 <div class="calculator__box">
-                    <form action="">
+                    <form action="" class="calculate_form">
                         <div class="col">
                             <div class="input place">
-                                <input type="text" name="city-start" placeholder="Откуда:" class="city">
+                                <input type="text" name="city-start" placeholder="Откуда:" class="city" onchange="calcRoute();">
                             </div>
                             <div class="input place insert-place">
-                                <input type="text" name="city-end[]" placeholder="Куда:" class="city">
+                                <input type="text" name="city-end" placeholder="Куда:" class="city" onchange="calcRoute();">
                             </div>
                             <input type="hidden" name="distance" data-distance="">
 
@@ -264,5 +264,6 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.0.0/jquery.magnific-popup.min.js"></script>
 
         <script src="js/main.js"></script>
+        <script src="js/calc.js"></script>
     </body>
 </html>

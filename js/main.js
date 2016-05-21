@@ -191,38 +191,8 @@ if ($(window).width() >= 750) {
     event.preventDefault();
     $('.navigation').slideToggle();
   });
-    /*---------------------------
-                                  CALCULATOR
-    ---------------------------*/
-  function cityAutoComplete() {
-    $( ".city" ).autocomplete({
-      source: function (request, response) {
-        $.ajax({
-          url: "http://serhiyhulyi.com.ua/request/request.php",
-          dataType: "text",
-          method: 'POST',
-          data: {
-            q: request.term
-          },
-          success: function( data ) {
-            var list = JSON.parse(data);
-            response (list);
-          }
-        });
-      },
-      minLength: 2
-    });
-  };
-  function destroy_cityAutoComplete(){
-    $( ".city" ).autocomplete( "destroy" );
-  }
-  cityAutoComplete();
-  $('a.insert-more').on('click', function(event) {
-    event.preventDefault();
-    destroy_cityAutoComplete();
-    $('.insert-place').removeClass('insert-place').after('<div class="input place insert-place"><input type="text" name="city-end[]" placeholder="Куда:" class="city"></div>')
-    cityAutoComplete();
-  });
+
+
 
 
   /*---------------------------
@@ -273,7 +243,7 @@ if ($(window).width() >= 750) {
   if ( $('#map_canvas').length > 0) {
     googleMap_initialize();   
   }
-  
+
 
 
 
