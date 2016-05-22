@@ -34,6 +34,7 @@
   calcRoute();
 
 
+
   var options = {
     types: ['address'],
     componentRestrictions: {country: 'ru'}
@@ -46,7 +47,6 @@
 
   $('a.insert-more').on('click', function(event) {
     event.preventDefault();
-
     $('.city').each(function(index, el) {
       google.maps.event.clearInstanceListeners($(this)[0]);
     });
@@ -59,5 +59,4 @@
       autocomplete = new google.maps.places.Autocomplete($(this)[0], options);
       autocomplete.addListener('place_changed', calcRoute);
     });
-    
   });
