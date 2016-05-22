@@ -1,9 +1,6 @@
   /*---------------------------
                                 CALCULATOR
   ---------------------------*/
-  function k(){
-    alert('k');
-  }
   var directionsService = new google.maps.DirectionsService();
 
   function calcRoute() {
@@ -36,38 +33,31 @@
   }
   calcRoute();
 
-  function cityAutoComplete() {
-    $( ".city" ).autocomplete({
-      source: function (request, response) {
-        $.ajax({
-          url: "http://serhiyhulyi.com.ua/request/request.php",
-          dataType: "html",
-          method: 'POST',
-          data: {
-            q: request.term
-          },
-          success: function( data ) {
-            var list = JSON.parse(data);
-            response (list);
-          }
-        });
-      },
-      minLength: 2
-    });
+
+  var options = {
+    types: ['address'],
+    componentRestrictions: {country: 'ru'}
   };
-
-  function destroy_cityAutoComplete(){
-    $( ".city" ).autocomplete( "destroy" );
-  }
-  cityAutoComplete();
-
+  $('.city').each(function(index, el) {
+    autocomplete = new google.maps.places.Autocomplete($(this)[0], options);
+    autocomplete.addListener('place_changed', calcRoute);
+  });
 
 
   $('a.insert-more').on('click', function(event) {
     event.preventDefault();
-    destroy_cityAutoComplete();
+
+    $('.city').each(function(index, el) {
+      google.maps.event.clearInstanceListeners($(this)[0]);
+    });
+    
     $('.insert-place')
       .removeClass('insert-place')
-      .after('<div class="input place insert-place"><input type="text" name="city-waypoints" placeholder="Промежуточный адрес:" class="city" onchange="calcRoute();"></div>')
-    cityAutoComplete();
+      .after('<div class="input place insert-place"><input type="text" name="city-waypoints" placeholder="Промежуточный адрес:" class="city" onchange="calcRoute();"></div>');
+    
+    $('.city').each(function(index, el) {
+      autocomplete = new google.maps.places.Autocomplete($(this)[0], options);
+      autocomplete.addListener('place_changed', calcRoute);
+    });
+    
   });
