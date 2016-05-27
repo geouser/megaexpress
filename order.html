@@ -123,16 +123,16 @@
                             <div class="input place insert-place">
                                 <input type="text" name="city-end" placeholder="Куда:" class="city">
                             </div>
-                            <input type="hidden" name="distance" data-distance="">
+                            <input type="hidden" name="distance" data-price="" value="0">
 
                             <div class="input radios">
                                 <p>Подать машину через:</p>
 
-                                <input type="radio" name="time" value="15" id="time-15" onchange="calcRoute();">
+                                <input type="radio" name="time" value="15" id="time-15" onchange="calculatePrice();">
                                 <label for="time-15">15 мин.</label>
-                                <input type="radio" name="time" value="30" id="time-30" onchange="calcRoute();">
+                                <input type="radio" name="time" value="30" id="time-30" onchange="calculatePrice();">
                                 <label for="time-30">30 мин.</label>
-                                <input type="radio" name="time" value="60" id="time-60" onchange="calcRoute();">
+                                <input type="radio" name="time" value="60" id="time-60" onchange="calculatePrice();">
                                 <label for="time-60">1 час</label>
                             </div>
 
@@ -143,18 +143,10 @@
 
                         <div class="col">
                             <div class="input select">
-                                <select name="car-type" id="">
-                                    <option value="0">Тип автомобиля:</option>
-                                    <option value="1">Газель 12 кубов 1.5т</option>
-                                    <option value="2">Газель 16 кубов 1.5т</option>
-                                    <option value="3">Валдай 36 кубов 5т.</option>
-                                    <option value="4">Мерседес 36 кубов 7т.</option>
-                                    <option value="5">Мерседес 40 кубов 10т.</option>
-                                    <option value="6">Еврофура 82 куба 20т.</option>
-                                </select>
+                                <select name="car-type" id="" onchange="selectPrices(); calculatePrice();"></select>
                             </div>
                             <div class="input select">
-                                <select name="rent-time" id="">
+                                <select name="rent-time" id="" data-price="" onchange="calculatePrice();">
                                     <option value="0">Срок аренды:</option>
                                     <option value="4">4 часа</option>
                                     <option value="5">5 часов</option>
@@ -172,7 +164,7 @@
 
                         <div class="col">
                             <div class="input select">
-                                <select name="man-count" id="">
+                                <select name="man-count" id="" data-price="" onchange="calculatePrice();">
                                     <option value="0">Количество грузчиков:</option>
                                     <option value="1">1 грузчик</option>
                                     <option value="2">2 грузчика</option>
@@ -194,7 +186,7 @@
                             </div>
 
                             <div class="input sum">
-                                <p>ИТОГО: <span class="sum-holder">25 000</span> РУБ.</p>
+                                <p>ИТОГО: <span class="sum-holder">0</span> РУБ.</p>
                             </div>
 
                             <button class="button button--full">Оставить заявку</button>
@@ -262,6 +254,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/onepage-scroll/1.3.1/jquery.onepage-scroll.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.0.0/jquery.magnific-popup.min.js"></script>
+        <script src="https://api.tiles.mapbox.com/mapbox.js/plugins/turf/v2.0.0/turf.min.js"></script>
 
         <script src="js/main.js"></script>
         <script src="js/calc.js"></script>
